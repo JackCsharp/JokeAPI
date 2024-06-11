@@ -10,5 +10,6 @@
         Task<bool> Like(int userId, int jokeId);
         Task<List<User>?> GetAllLikers(int jokeId);
         Task<List<Comment>> GetAllComments(int jokeId);
+        Task<List<Joke>> GetJokesByGuild(int guildId);
     }
 }

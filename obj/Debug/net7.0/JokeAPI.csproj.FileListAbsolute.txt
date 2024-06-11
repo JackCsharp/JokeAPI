@@ -74,3 +74,4 @@ C:\AFiles\Programming\Projects\C-sharp projects\JokeAPI\JokeAPI\obj\Debug\net7.0
 C:\AFiles\Programming\Projects\C-sharp projects\JokeAPI\JokeAPI\obj\Debug\net7.0\JokeAPI.pdb
 C:\AFiles\Programming\Projects\C-sharp projects\JokeAPI\JokeAPI\obj\Debug\net7.0\JokeAPI.genruntimeconfig.cache
 C:\AFiles\Programming\Projects\C-sharp projects\JokeAPI\JokeAPI\obj\Debug\net7.0\ref\JokeAPI.dll
+C:\AFiles\Programming\Projects\C-sharp projects\JokeAPI\JokeAPI\obj\Debug\net7.0\JokeAPI.sourcelink.json

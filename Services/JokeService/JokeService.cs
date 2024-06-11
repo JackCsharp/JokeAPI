@@ -1,4 +1,5 @@
-﻿using Microsoft.Identity.Client;
+﻿using JokeAPI.Model;
+using Microsoft.Identity.Client;
 
 namespace JokeAPI.Services.JokeService
 {
@@ -10,6 +11,15 @@ namespace JokeAPI.Services.JokeService
         public JokeService(DataContext context)
         {
             _context = context;
+        }
+        public async Task<List<Joke>> GetJokesByGuild(int guildId)
+        {
+            var jokes = await (from joke in _context.Jokes
+                               join user in _context.Users on joke.UserId equals user.UserId
+                               join guild in _context.Guilds on user.GuildId equals guild.GuildId
+                               where guild.GuildId == guildId
+                               select joke).ToListAsync();
+            return jokes;
         }
 
         public async Task<List<Joke>> AddJoke(Joke joke)

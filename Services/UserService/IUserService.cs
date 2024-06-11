@@ -3,7 +3,7 @@
     public interface IUserService
     {
         Task<User?> Login(UserDto request);
-        Task<bool> Register(UserDto request);
+        Task<User?> Register(UserDto request);
         Task<List<User>?> GetUser(int id);
         Task<bool> DeleteUser(int id);
         Task<bool> UpdateUser(int id, UserDto request);

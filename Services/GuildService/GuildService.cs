@@ -59,6 +59,18 @@ namespace JokeAPI.Services.GuildService
             allGuilds.Add(guild);
             return allGuilds;
         }
+        public async Task<GuildChatMessage> AddChatMessage(GuildChatMessage message)
+        {
+            _context.GuildChatMessages.Add(message);
+            await _context.SaveChangesAsync();
+            return message;
+
+        }
+        public async Task<List<GuildChatMessage>> GetAllChatMessagesByGuild(int guildId)
+        {
+            var messages = await _context.GuildChatMessages.Where(m=>m.GuildId==guildId).ToListAsync();
+            return messages;
+        }
 
     }
 }

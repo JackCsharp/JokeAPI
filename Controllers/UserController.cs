@@ -24,8 +24,9 @@ namespace JokeAPI.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<User>> Register(UserDto request)
         {
-            if ( await _service.Register(request)) return Ok("Success");
-            return BadRequest("Wrong data");
+            var response = await _service.Register(request);
+            if ( response!=null) return Ok(response);
+            return BadRequest(null);
         }
         [HttpPost("login")]
         public async Task<ActionResult<User>> Login(UserDto request)

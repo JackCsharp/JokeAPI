@@ -74,5 +74,12 @@ namespace JokeAPI.Controllers
             var comments = await _jokeService.GetAllComments(id);
             return Ok(comments);
         }
+        [HttpGet("JokesByGuild/{guildId}")]
+        public async Task<ActionResult<List<Joke>>> GetJokesByGuild(int guildId)
+        {
+            var jokes = await _jokeService.GetJokesByGuild(guildId);
+            if (jokes == null) return NotFound("Not found");
+            return Ok(jokes);
+        }
     }
 }

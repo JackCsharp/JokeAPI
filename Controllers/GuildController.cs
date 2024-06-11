@@ -55,5 +55,16 @@ namespace JokeAPI.Controllers
             if (users is null) return NotFound("users");
             return users;
         }
+        [HttpPost("addmessage")]
+        public async Task<ActionResult<GuildChatMessage>> AddMessage(GuildChatMessage message)
+        {
+            return await _guildService.AddChatMessage(message);
+        }
+        [HttpGet("allmessagesbyguild/{id}")]
+        public async Task<ActionResult<List<GuildChatMessage>>> GetAllMessagesByGuild(int id)
+        {
+            var messages = await _guildService.GetAllChatMessagesByGuild(id);
+            return messages;
+        }
     }
 }

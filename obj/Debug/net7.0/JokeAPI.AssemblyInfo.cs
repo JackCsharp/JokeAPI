@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JokeAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9491e16c63eaddf9d0ac024c3bcdbd41368493c")]
 [assembly: System.Reflection.AssemblyProductAttribute("JokeAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JokeAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -57,14 +57,14 @@ namespace JokeAPI.Services.UserService
             
         }
 
-        public async Task<bool> Register(UserDto request)
+        public async Task<User?> Register(UserDto request)
         {
             var existingUser = await _context.Users.SingleOrDefaultAsync(u => u.Username == request.Username);
 
             if (existingUser != null)
             {
                 // Если пользователь с таким именем уже существует, вернуть false
-                return false;
+                return null;
             }
 
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordsalt);
@@ -79,7 +79,7 @@ namespace JokeAPI.Services.UserService
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return true;
+            return user;
         }
 
         public async Task<bool> UpdateUser(int id, UserDto request)

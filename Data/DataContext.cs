@@ -24,6 +24,8 @@ namespace JokeAPI.Data
         public DbSet<Guild> Guilds { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<CommentReply> CommentsReplies { get; set; }
+        public DbSet<GuildChatMessage> GuildChatMessages { get; set; }
+        public DbSet<Like> Likes { get; set; }
 
     }
 }
